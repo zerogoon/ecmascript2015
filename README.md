@@ -16,3 +16,7 @@
 ##### 4.1 Array.find() Array.findIndex() Array.fill()
 
 ##### 5.0 Object Destructuring
+##### 5.1 Array Destructuring
+##### 5.2 Renaming
+##### 5.3 Function Destructuring
+##### 5.4 Value Shorthands
