@@ -20,3 +20,4 @@
 ##### 5.2 Renaming
 ##### 5.3 Function Destructuring
 ##### 5.4 Value Shorthands
+##### 5.5 Swapping and Skipping

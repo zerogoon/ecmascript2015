@@ -1,8 +1,9 @@
-const follow = checkFollow();
-const alert = checkAlert();
+const user = {
+    NAME: "nico",
+    age: 24,
+    password: 12345
+};
 
-const settings = {
-    notifications: {
-        follow: follow
-    }
-}
+const rename = ({NAME: name, ...rest}) => ({name, ...rest});
+
+console.log(rename(user));
