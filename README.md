@@ -21,3 +21,10 @@
 ##### 5.3 Function Destructuring
 ##### 5.4 Value Shorthands
 ##### 5.5 Swapping and Skipping
+
+##### 6.0 Introduction to Spread
+##### 6.1 Spread Application
+##### 6.2 Introduction to Rest Parameters
+##### 6.3 Rest + Spread + Destructure Magic
+
+##### 7.0 For ... of
