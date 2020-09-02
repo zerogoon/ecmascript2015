@@ -1,17 +1,23 @@
-const p1 = new Promise(resolve => {
-    setTimeout(resolve, 10000, "First");
-});
+const getMoviesPromise = () => {
+    fetch("https://yts.am/api/v2/list_movies.json")
+        .then(response => {
+            console.log(response);
+            return response.json();
+        })
+        .then(json => console.log(json))
+        .catch(e => console.log(`✖️ ${e}`));
+};
 
-const p2 = new Promise((resolve, reject) => {
-    setTimeout(reject, 5000, "I hate JS");
-});
+const getMoviesAsync = async () => {
+    try {
+        const response = await fetch("https://yts.am/api/v2/list_movies.json");
+        const json = await response.json();
+        console.log(json);
+    } catch (e) {
+        console.log(`✖️ ${e}`);
+    } finally {
+        console.log("We are done!");
+    }
+};
 
-const p3 = new Promise(resolve => {
-    setTimeout(resolve, 3000, "Third");
-});
-
-const motherPromise = Promise.race([p1, p2, p3]);
-
-motherPromise
-    .then(values => console.log(values))
-    .catch(err => console.log(err));
+getMoviesAsync();
