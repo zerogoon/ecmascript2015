@@ -1,48 +1,33 @@
-class User {
-    constructor(options) {
-        this.username = options.name;
-        this.lastName = options.lastName;
-        this.email = options.email;
-        this.password = options.password;
+class Counter {
+    constructor({ initialNumber = 0, counterId, plusId, minusId }) {
+        this.count = initialNumber;
+        this.counter = document.getElementById(counterId);
+        this.counter.innerHTML = initialNumber;
+        this.plusBtn = document.getElementById(plusId);
+        this.minusBtn = document.getElementById(minusId);
+        this.addEventListeners();
     }
-    sayHello() {
-        console.log(`Hello, my name is ${this.username}`);
+    addEventListeners = () => {
+        this.plusBtn.addEventListener("click", this.increase);
+        this.minusBtn.addEventListener("click", this.decrease);
     }
-    getProfile() {
-        console.log(`${this.username} ${this.email} ${this.password}`)
+    increase = () => {
+        this.count = this.count + 1;
+        this.repaintCount();
+    };
+    decrease = () => {
+        this.count = this.count - 1;
+        this.repaintCount();
     }
-    updatePassword(newPassword, currentPassword) {
-        if (currentPassword == this.password) {
-            this.password = newPassword;
-        } else {
-            console.log("Can't change password");
-        }
-    }
-}
-
-const sexyUser = new User({
-    username: "ZERO",
-    lastName: "GOON", 
-    email: "zerogoon@gmail.com", 
-    password: "1234"
-});
-
-class Admin extends User {
-    constructor({userName, lastName, email, password, superAdmin, isActive}) {
-        super({userName, lastName, email, password});
-        this.superadmin = superAdmin;
-        this.isActive = isActive;
-    }
-    deleteWebsite() {
-        console.log("Deleting the whole website....");
+    repaintCount = () => {
+        this.counter.innerHTML = this.count;
     }
 }
 
-const admin = new Admin({
-    username: "ZERO",
-    lastName: "GOON", 
-    email: "zerogoon@gmail.com", 
-    password: "1234",
-    supserAdmin: true,
-    isActive: true
+new Counter({ counterId: "count", plusId: "add", minusId: "minus"});
+new Counter({ 
+    counterId: "count2", 
+    plusId: "add2", 
+    minusId: "minus2",
+    initialNumber: 666
 });
