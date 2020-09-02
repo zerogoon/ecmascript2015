@@ -1,4 +1,4 @@
-# ECMAScript2015
+# ECMAScript2020
 
 ##### 3.3 Cloning Styled Components
 ##### 1) CSS를 적용한 element 리턴
@@ -28,3 +28,5 @@
 ##### 6.3 Rest + Spread + Destructure Magic
 
 ##### 7.0 For ... of
+##### 12 섹션까지 완강
+##### 13 섹션 추가됨 : 2020년
